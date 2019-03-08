@@ -1,4 +1,5 @@
 require 'sidekiq/web'
+require 'kramdown'
 
 Rails.application.routes.draw do
   resources :trades
