@@ -2,8 +2,14 @@ require 'sidekiq/web'
 require 'kramdown'
 
 Rails.application.routes.draw do
+  
   resources :trades
+  
+  resources :conversations do
+    resources :messages
+  end
+
   devise_for :users
   root to: 'trades#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
 end
